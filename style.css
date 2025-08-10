@@ -1,1 +1,55 @@
+:root{
+  --fg:#2a2a2a;
+  --muted:#6b7280;
+  --accent:#ef6b6b; /* 赤ライン */
+  --card:#ffffff;
+  --bg:#fafafa;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+a{color:inherit;text-decoration:none}
+
+/* ヘッダー */
+.site-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 18px;border-bottom:1px solid #eee;background:#fff;position:sticky;top:0;z-index:10;
+}
+.icon-btn{border:0;background:transparent;display:inline-flex;gap:4px;flex-direction:column;padding:6px;cursor:pointer}
+.icon-btn .bar{width:22px;height:2px;background:#666;border-radius:2px}
+.social{display:flex;gap:14px}
+.social .ico{width:22px;height:22px;display:inline-flex}
+.social svg{width:100%;height:100%;fill:#9aa0a6}
+.social .ico:hover svg{fill:#555}
+
+/* キッカー（細い赤ライン） */
+.kicker{
+  max-width:980px;margin:24px auto 16px;padding:0 16px;position:relative;color:#555
+}
+.kicker::after{
+  content:"";display:block;height:4px;background:var(--accent);width:100%;margin-top:12px;border-radius:2px
+}
+.kicker a{color:#3b82f6}
+
+/* ヒーロー画像 */
+.hero{max-width:980px;margin:0 auto;padding:0 16px}
+.hero img{
+  width:100%;display:block;border-radius:10px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08)
+}
+
+/* コンテンツ */
+.container{max-width:980px;margin:24px auto 80px;padding:0 16px}
+h1{font-size:clamp(24px,4.5vw,40px);line-height:1.25;margin:22px 0 8px;font-weight:600;letter-spacing:.02em}
+h1 .strong{font-weight:800}
+.subhead{color:var(--muted);letter-spacing:.18em;font-size:.95rem}
+
+/* ドロワー（オプション） */
+.drawer{
+  position:fixed;inset:0 0 0 auto;width:min(82%,300px);background:#fff;
+  box-shadow:-8px 0 24px rgba(0,0,0,.12);transform:translateX(100%);transition:transform .25s ease;z-index:20;
+  padding:24px
+}
+.drawer.open{transform:translateX(0)}
+.drawer nav{display:flex;flex-direction:column;gap:14px}
+.drawer a{color:#444}
 
